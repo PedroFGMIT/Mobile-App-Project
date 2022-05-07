@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>To-do List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label>Slide left on an item to remove it</ion-label>
+  <br>
+  <ion-label>Slide right on an item to add it to home screen</ion-label>
+  <ion-list>
+    <ion-item-sliding *ngFor="let entry of listEntries; let i = index">
+    <ion-item>
+      <ion-label>{{entry}}</ion-label>
+    </ion-item>
+      <ion-item-options side="end" (ion-swipe)="Delete(i)">
+        <ion-item-option color="danger" (click)="Delete(i)" expandable>
+          Remove</ion-item-option>
+      </ion-item-options>
+      <ion-item-options side="start" (ion-swipe)="mainEntry(i)">
+        <ion-item-option color="warning" (click)="mainEntry(i)" expandable>
+          prioritize</ion-item-option>
+      </ion-item-options>
+  </ion-item-sliding>
+
+  </ion-list>
+  <ion-input type="text" [(ngModel)]="listItem" placeholder="Add To List">
+  </ion-input>
+  <ion-button (click)="addItem()">Add</ion-button>
+  <br>
+  <ion-button color="danger" (click)="SaveList()">Save and Exit</ion-button>
+</ion-content>

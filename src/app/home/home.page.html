@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Student Guide App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button color="dark" [routerLink]="['/news']">News</ion-button>
+  <br>
+  <br>
+  <ion-button color="secondary" [routerLink]="['/camera']">Camera</ion-button>
+  <br>
+  <br>
+  <ion-label> Current Priority Task: {{mainEntry}}</ion-label>
+  <br>
+
+  <ion-button color="success" [routerLink]="['/list']">To-do List</ion-button>
+
+</ion-content>
